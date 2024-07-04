@@ -1,0 +1,4 @@
+@import url(https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700&family=Work+Sans:ital,wght@0,700&display=swap);
+:root{--color-primary: #6207cc;--color-on-primary: #FFFFFF;--color-background: #FFFFFF;--color-on-background: #343a40;--color-product-image-background: rgba(46, 46, 46, 0.05);--color-primary-rgb: 46, 46, 46;--color-on-primary-rgb: 255, 255, 255;--color-background-rgb: 255, 255, 255;--color-on-background-rgb: 46, 46, 46;--color-background-brightness: 255;--button-corner-radius: 32px;--input-corner-radius: 20px;--image-corner-radius: 20px;--font-family-base: Lato, sans-serif;--font-family-heading: "Work Sans", sans-serif;--font-weight-base: 400;--font-weight-base-bold: bolder;--font-weight-heading: 700;--font-style-base: normal;--font-style-heading: normal;--text-transform-base: none;--text-transform-heading: none;--logo-width: 200px;--image-ratio-padding: 133.34% }
+
+/*# sourceMappingURL=variables.css.map*/

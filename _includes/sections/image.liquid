@@ -1,0 +1,15 @@
+<section
+  class="image-section"
+>
+  <div class="image-section__inner">
+    <div class="container{% if include.size %} container--{{ include.size }}{% endif %} wrapper">
+      <div class="image-section__image-container">
+        <img 
+          class="image-section__image"
+          src="{{ include.image }}"
+          alt="{{ include.title }}"
+        />
+      </div>
+    </div>
+  </div>
+</section>

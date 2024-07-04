@@ -1,0 +1,41 @@
+<section class="menu-collection">
+  <div class="menu-collection__inner">
+    <div class="container wrapper">
+      <div class="section-header">
+        {% if include.heading != blank %} 
+          <div class="section-header__heading-container">
+            <div class="separator"><span></span></div>
+            <h2 class="section-header__heading">{{ include.heading }}</h2>
+            <div class="separator"><span></span></div>
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="grid grid--waffle grid--x-small">
+        {% for feed in include.feeds limit: 9 offset:1 %}
+          {%- assign image = feed.full_picture -%}
+          {%- assign url = feed.permalink_url -%}
+          {%- assign heading = feed.message -%}
+
+          <div class="grid__column grid__column--6 grid__column--4@sm">
+            {% if url or url != '/' %}
+              <a class="menu-collection__link" target="_blank" href="{{ url }}">
+            {% endif %}
+
+            {% if image %}
+              <div class="image image--current-collections image--background-color">
+                <div class="image__object">
+                  <img src="{{ image }}">
+                </div>
+              </div>
+            {% endif %}
+
+            {% if url or url != '/' %}
+              </a>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>

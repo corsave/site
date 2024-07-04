@@ -1,0 +1,28 @@
+<section 
+  data-section-id="{{ section.id }}"
+  data-section-type="rich-text"
+  class="rich-text rich-text--{{ include.direction }}"
+>
+  <div class="rich-text__inner">
+    <div class="container container--12 wrapper">
+      <div class="grid grid--waffle grid--x-small">
+        <div class="grid__column grid__column--middle grid__column--{{ include.first_colum_mobilen }} grid__column--{{  include.first_column }}@md">
+          {% if include.heading %}
+            <div class="rich-text__header">
+              <h2 class="rich-text__heading">
+                {{ include.heading }}
+              </h2>
+            </div>
+          {% endif %}
+        </div>
+        <div class="grid__column grid__column--middle grid__column--{{ include.second_column_mobile }} grid__column--{{  include.second_column }}@md">
+          <div class="rich-text__text">
+            <div class="html-formatter html-formatter--center">
+              {{ include.text }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

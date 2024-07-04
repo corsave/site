@@ -1,0 +1,62 @@
+.tile {
+  $this: &;
+
+  display: block;
+  text-decoration: none;
+
+  &:hover {
+    #{$this}__heading {
+      color: get-color(primary);
+    }
+  }
+
+  &__description {
+    margin-top: 18px;
+    text-align: center;
+
+    @include media-query(sm) {
+      margin-top: 34px;
+    }
+  }
+
+  &__heading {
+    @include font-heading();
+
+    transition: color $transition-base;
+
+    font-size: font-size-heading(16px);
+  }
+
+  &__price {
+    display: inline-block;
+    color: get-color(text);
+    margin-top: 7px;
+
+    @include media-query(sm) {
+      margin-top: 14px;
+    }
+
+    &--offer {
+      color: rgba(get-color(on-background-rgb), .5);
+      text-decoration: line-through;
+      text-decoration-style: solid;
+      margin-right: 5px;
+    }
+  }
+
+  &--zoom {
+    #{$this}__image {
+      img {
+        transition: transform 0.4s, opacity 0.4s;
+      }
+    }
+    &:hover {
+      #{$this}__image {
+        img {
+          transform: scale3d(1.04, 1.04, 1);
+          opacity: 0.55;
+        }
+      }
+    }
+  }
+}

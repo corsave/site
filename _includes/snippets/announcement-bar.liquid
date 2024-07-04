@@ -1,0 +1,18 @@
+<section class="announcement-bar">
+  <div class="container wrapper">
+    <div class="announcement-bar__inner">
+      {% if include.enable_countdown == true %}
+        {% include snippets/countdown.html
+          countdown_type=include.timer_type
+          countdown_start_date=include.countdown_start_date 
+          countdown_end_date=include.countdown_end_date
+          label=include.label
+        %}
+      {% else %}
+        <span class="announcement-bar__label">
+          {{ include.label }}
+        </span>
+      {% endif %}
+    </div>
+  </div>
+</section>

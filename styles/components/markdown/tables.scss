@@ -1,0 +1,42 @@
+// Needs refactoring
+// stylelint-disable selector-max-type, selector-max-compound-selectors
+.markdown {
+  // Tables
+  table {
+    display: block;
+    width: 100%; // keep for backwards compatibility
+    width: max-content;
+    max-width: 100%;
+    overflow: auto;
+
+    th {
+      font-weight: $font-weight-base-bold;
+    }
+
+    th,
+    td {
+      // stylelint-disable-next-line primer/spacing
+      padding: 6px 13px;
+      border: $divider-border;
+    }
+
+    td {
+      > :last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    tr {
+      background-color: get-color(background-pale);
+      border-top: $divider-border;
+
+      &:nth-child(2n) {
+        background-color: get-color(background-pale);
+      }
+    }
+
+    img {
+      background-color: transparent;
+    }
+  }
+}

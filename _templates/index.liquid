@@ -1,0 +1,151 @@
+---
+layout: theme
+permalink: /index.html
+---
+<div class="main">
+  <div class="main__sections">
+    {%- assign heading = site.posts.first.title | upcase -%}
+
+    {% include sections/hero-image.liquid
+      show_arrow_navigation=true
+      show_dots_navigation=false
+      autoplay_slider=true
+      mousedrag_slider=true
+      move_top=false
+      show_parallax=true
+
+      image=site.data.feeds.first.full_picture
+      image_link=site.data.feeds.first.permalink_url
+
+
+      heading="Arquitectura y Construcción"
+      button_text="Contáctanos"
+      button_link="https://wa.me/51959226421"
+    %}
+
+    {% include sections/image.liquid
+      size="12"
+      image=site.data.facebook.cover.source
+      title=site.data.facebook.cover.name
+    %}
+
+    {% include sections/menu-collection.liquid
+      heading=""
+      numbers_collections="3"
+      feeds=site.data.feeds
+    %}
+
+    {% include sections/separator.liquid
+      size="outer"
+      image="/assets/text-01.svg"
+      title=""
+    %}
+
+    {% include sections/rich-text.liquid
+        first_column=6
+        first_column_mobile=12
+        second_column=6
+        second_column_mobile=12
+        heading="Nuestros Servicios"
+        text="En Corsave nos especializamos en construcción, diseño de interiores y habilitación urbana, ofreciendo soluciones integrales en arquitectura e inmobiliaria. Con un enfoque en la calidad y la innovación, nos dedicamos a transformar espacios, desde la planificación urbana hasta la creación de ambientes interiores sofisticados, asegurando proyectos que combinan funcionalidad y estética para satisfacer las necesidades de nuestros clientes."
+        direction="left"
+    %}
+
+    {% include sections/image-with-text.liquid
+      heading="Construcción"
+      text="<p>Contamos con el mejor equipo de profesionales para ofrecer la mejor ejecución de obras y otros proyectos de construcción, y todo tipo de soluciones que su proyecto requiera, con la garantía y seguridad que usted necesita. Así como en las obras civiles y edificaciones en general, cuidando los acabados y detalles arquitectónicos de acuerdo a la exigencia de nuestros clientes.</p>"
+      image="/assets/aaaaa_1_2459a7fe13.jpg"
+      image_position="left"
+    %}
+
+    {% include sections/image-with-text.liquid
+      heading="Diseño de Interiores"
+      text="<p>En CORSAVE cubrimos un amplio espectro en el diseño de interiores. Ofrecemos soluciones creativas y ambientalmente progresivas que crean un impacto duradero en los equipos de trabajo, negocios, y la marca de nuestros clientes.</p>"
+      image="/assets/ddddd_482322d935.jpg"
+      image_position="left"
+    %}
+
+    {% include sections/image-with-text.liquid
+      heading="Habilitacion Urbana"
+      text="<p>El uso de este tipo de equipos añadirá valor a su inversión a través de un aumento de rendimiento, fiabilidad y calidad en todos los proyectos que realice. Siendo nuestro compromiso el ofrecerle una amplia variedad, de equipo y maquinaria, versátiles y eficaces para cualquier tipo de labor.</p>"
+      image="/assets/IMG_9169_b1ffb463d8.jpg"
+      image_position="left"
+    %}
+
+    {% include sections/image-with-text.liquid
+      heading="Arquitectura e Inmobiliaria"
+      text="<p>Somos expertos consultores de obras en Arequipa y brindamos asesoramiento en todo lo que se refiere a proyectos arquitectónicos, civiles y de remodelación en general. Contamos con profesionales capacitados y experimentados que le ofrecerán su conocimiento y la calidad, seguridad y confianza que sus proyectos requieran.</p>"
+      image="/assets/photo_building_9250b65df6.jpg"
+      image_position="left"
+    %}
+
+    {% include sections/rich-text.liquid
+      first_column=12
+      first_column_mobile=12
+      second_column=12
+      second_column_mobile=12
+      heading="Contacto"
+      text="Aquí puedes encontrar información de contacto para que puedas comunicarte con nosotros."
+      direction="center"
+    %}
+
+    {% include sections/custom-html.liquid
+      custom_html='<div class="container container--8 wrapper">
+    <div class="grid grid--middle" style="border-bottom: 1px solid var(--color-on-background); padding: 25px 0;">
+      <div class="grid__column grid__column--6">
+          <strong>Dirección</strong>
+      </div>
+      <div class="grid__column grid__column--6">
+        <p>Urb. La Estrella Mz.C Lt13 Jose Luis Bustamante y Rivero, Arequipa, Peru</p>
+      </div>
+    </div>
+    <div class="grid grid--middle" style="border-bottom: 1px solid var(--color-on-background); padding: 25px 0;">
+      <div class="grid__column grid__column--6">
+        <strong>Celular/WhatsApp</strong>
+      </div>
+      <div class="grid__column grid__column--6">
+        <p>959 226 421</p>
+      </div>
+    </div>
+    <div class="grid grid--middle" style="border-bottom: 1px solid var(--color-on-background); padding: 25px 0;">
+      <div class="grid__column grid__column--6">
+        <strong>Email</strong>
+      </div>
+      <div class="grid__column grid__column--6">
+        <p>info@corsave.pe</p>
+      </div>
+    </div></div>'
+      fullwidth=false
+    %}
+
+    {%- comment -%}
+    {% include sections/hero.liquid
+      heading=heading
+      text=site.posts.first.description
+      show_button1=true
+      button1_text='LEÉLO AHORA'
+      button1_url=site.posts.first.url
+      show_button2=false
+      button2_text="ENVIAR A KINDLE"
+      button2_url="#"
+      show_button3=false
+      button3_text="DESCARGAR"
+      button3_url="#"
+      image=site.posts.first.image
+      background_image=''
+      show_background_overlay=false
+      background_overlay_color='#3a3c45'
+      background_overlay_opacity=80
+      background_blend_mode='luminosity'
+      background_clip='none'
+      heading_size='large'
+    %}
+    {%- endcomment -%}
+
+    {% include sections/separator.liquid
+      size="outer"
+      image="/assets/footer_label_pc.svg"
+      title=""
+    %}
+  </div>
+</div>

@@ -1,0 +1,51 @@
+<section
+  data-section-id="{{ section.id }}"
+  data-section-type="link-list"
+  class="link-list link-list--{{ section.id }}"
+>
+  <div class="link-list__inner">
+    <div class="container wrapper">
+      {% if include.heading != blank or include.text != blank %}
+        <div class="link-list__header link-list__header--{{ include.content_alignment }}">
+          <h2 class="link-list__heading">
+            {{ include.heading }}
+          </h2>
+
+          {% if include.text != blank %}
+            <p class="link-list__text">
+              {{ include.text }}
+            </p>
+          {% endif %}
+        </div>
+      {% endif %}
+      <div class="link-list__container link-list__container--{{ include.style }}">
+        <div class="link-list__cta-container link-list__cta-container--{{ include.style }}">
+          {% for block in include.links %}
+            {% case block.type %}
+              {% when 'button' %}
+                <div class="link-list__cta">
+                  <a href="{{ block.settings.url | localized_url }}" class="button button--primary button--expand" target="_blank">
+                    {% if block.settings.icon != blank %}
+                      <span class="button__icon">
+                        {{ block.settings.icon | icon }}
+                      </span>
+                    {% endif %}
+                    {{ block.settings.text }}
+                  </a>
+                </div>
+            {% endcase %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--
+heading: "Handy links"
+text: ""
+content_alignment: "center"
+style: "single-column"
+links:
+  - text: "Text"
+    url: "https://www.fourthwall.com"
+    icon: ""-->

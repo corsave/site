@@ -1,0 +1,31 @@
+.section-header {
+  position: relative;
+  margin-bottom: 40px;
+  text-align: center;
+
+  @include media-query(sm) {
+    margin-bottom: 56px;
+  }
+
+  &__heading {
+    font-size: font-size-heading(26px);
+
+    &--left {
+      text-align: left;
+    }
+  }
+
+  &__cta {
+    margin-top: 20px;
+
+    @include media-query(sm) {
+      position: absolute;
+      top: 50%;
+      right: 0;
+
+      transform: translateY(-50%);
+
+      margin-top: 0;
+    }
+  }
+}

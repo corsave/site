@@ -1,0 +1,44 @@
+---
+layout: theme
+permalink: /empresa/index.html
+title: Sobre nosotros | CORSAVE
+---
+<div class="main">
+  <div data-testid="main.sections" class="main__sections main__sections--space">
+    {% include sections/rich-text.liquid
+      first_column=12
+      first_column_mobile=12
+      second_column=12
+      second_column_mobile=12
+      heading="Sobre Nosotros"
+      text="Nuestra prioridad es concentrarnos en aquello que mejore la calidad de vida de las personas, que las haga estar más sanas y ser más felices."
+      direction="center"
+    %}
+
+    {% include sections/rich-text.liquid
+      first_column=6
+      first_column_mobile=12
+      second_column=6
+      second_column_mobile=12
+      heading="Visión"
+      text="Ser reconocidos como una empresa líder, sólida, eficaz, eficiente e innovadora en el sector de construcción y en el rubro inmobiliario, con un alto estándar de calidad y seguridad; haciendo uso de la tecnología y garantizando lo más altos estándares de calidad, seguridad y desarrollo social."
+      direction="center"
+    %}
+
+    {% include sections/rich-text.liquid
+      first_column=6
+      first_column_mobile=12
+      second_column=6
+      second_column_mobile=12
+      heading="Misión"
+      text="Ser una empresa comprometida y dedicada principalmente a la construcción y desarrollo de proyectos, con el claro propósito de desarrollar edificaciones sólidas, fuertes y seguras con garantía buscando constantemente la perfección en cada uno de nuestros procesos."
+      direction="center"
+    %}
+
+    {% include sections/separator.liquid
+      size="outer"
+      image="/assets/footer_label_pc.svg"
+      title=""
+    %}
+  </div>
+</div>

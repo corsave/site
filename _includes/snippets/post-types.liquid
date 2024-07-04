@@ -1,0 +1,100 @@
+<div class="grid__column grid__column--12 grid__column--6@sm">
+  {% if include.post %}
+    {% case include.post.type %}
+      {% when "Audio" %}
+        {% include snippets/post-tile.liquid
+          post_type=include.post.type
+          post_link=include.post.url
+          post_state=include.post.state
+          publish_date=include.post.publish_date
+          title=include.post.title
+          description=include.post.description
+          comments_count=include.post.comments_count
+          likes_count=include.post.likes_count
+          image=include.post.thumbnail_url
+        %}
+
+      {% when "Video" %}
+        {% include snippets/post-tile.liquid
+          post_type=include.post.type
+          post_link=include.post.url
+          post_state=include.post.state
+          publish_date=include.post.publish_date
+          title=include.post.title
+          description=include.post.description
+          comments_count=include.post.comments_count
+          likes_count=include.post.likes_count
+          image=include.post.thumbnail_url
+        %}
+
+      {% when "Text" %}
+        {% include snippets/post-tile.liquid
+          post_type=include.post.type
+          post_link=include.post.url
+          post_state=include.post.state
+          publish_date=include.post.publish_date
+          title=include.post.title
+          description=include.post.description
+          comments_count=include.post.comments_count
+          likes_count=include.post.likes_count
+        %}
+
+      {% when "Poll" %}
+        {% include snippets/post-tile.liquid
+          post_type=include.post.type
+          post_link=include.post.url
+          post_state=include.post.state
+          publish_date=include.post.publish_date
+          title=include.post.title
+          description=include.post.description
+          comments_count=include.post.comments_count
+          likes_count=include.post.likes_count
+          options=include.post.options
+          status=include.post.status
+          finished_at=include.post.finished_at
+        %}
+
+      {% when "VideoEmbed" %}
+        {% include snippets/post-tile.liquid
+          post_type=include.post.type
+          post_link=include.post.url
+          post_state=include.post.state
+          publish_date=include.post.publish_date
+          title=include.post.title
+          description=include.post.description
+          comments_count=include.post.comments_count
+          likes_count=include.post.likes_count
+          image=include.post.thumbnail_url
+        %}
+
+      {% when "Image" %}
+        {% include snippets/post-tile.liquid
+          post_type=include.post.type
+          post_link=include.post.url
+          post_state=include.post.state
+          publish_date=include.post.publish_date
+          title=include.post.title
+          description=include.post.description
+          comments_count=include.post.comments_count
+          likes_count=include.post.likes_count
+          image=include.post.image
+        %}
+
+      {% when "LiveStream" %}
+        {% include snippets/post-tile.liquid
+          post_type=include.post.type
+          post_link=include.post.url
+          post_state=include.post.state
+          publish_date=include.post.publish_date
+          title=include.post.title
+          description=include.post.description
+          comments_count=include.post.comments_count
+          likes_count=include.post.likes_count
+          image=include.post.thumbnail_url
+        %}
+
+      {% else %}
+        {{ include.post.title }} is not a valid post
+    {% endcase %}
+  {% endif %}
+</div>

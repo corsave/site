@@ -1,0 +1,91 @@
+{% if include.show_announcement_bar == true %}
+  {% include snippets/announcement-bar.liquid type='normal' %}
+{% endif -%}
+
+<div class="header">
+  <div class="wrapper">
+    <div class="header__sections">
+      <div class="header__section header__section--left">
+        <div class="header__logo visible@sm">
+          {% if page.url == '/index.html' %}
+            <h1 class="header__logo visible@sm">
+          {% else %}
+            <div class="header__logo visible@sm">
+          {% endif %}
+
+            <a href="/" class="header__logo-link">
+              {% include snippets/logo.liquid class="header__logo-image" %}
+            </a>
+
+          {% if page.url == '/index.html' %}
+            </h1>
+          {% else %}
+            </div>
+          {% endif %}
+        </div>
+
+        <div class="hidden@sm">
+          <button
+            data-drawer-trigger-primary="mobile-menu"
+            class="header__icon header__icon--hamburger"
+          >
+            {% include snippets/icon-hamburger.svg %}
+          </button>
+        </div>
+      </div>
+
+      <div class="header__section header__section--middle">
+        <div class="header__logo hidden@sm">
+          <a href="/" class="header__logo-link">
+            {% include snippets/logo.liquid class="header__logo-image" %}
+          </a>
+        </div>
+
+        <nav class="header__nav visible@sm">
+          <ul class="header__list header__list--nav">
+            {% for link in site.linklists[include.menu].links %}
+              <li class="header__list-item">
+                <a
+                  href="{{ link.url | localized_url }}"
+                  class="header__link{% if link.links != blank %} header__link--icon{% endif %}"
+                >
+                  {{ link.title }}
+
+                  {% if link.links %}
+                    <span class="header__link-icon">
+                      {% include snippets/icon-chevron-bottom.svg %}
+                    </span>
+                  {% endif %}
+                </a>
+
+                {% if link.links %}
+                  <div class="header__dropdown">
+                    <ul class="header__dropdown-inner">
+                      {% for childlink in link.links %}
+                        <li class="header__dropdown-item">
+                          <a class="header__dropdown-link" href="{{ childlink.url | localized_url }}">
+                            {{ childlink.title }}
+                          </a>
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  </div>
+                {% endif %}
+              </li>
+            {% endfor %}
+          </ul>
+        </nav>
+      </div>
+
+      <div class="header__section header__section--right">
+        <div class="header__social visible@sm">
+          <ul class="header__list header__list--socials header__list--right-nav">
+            {% include snippets/socials.liquid menu='social' li_class='header__list-item' a_class='header__icon' badge_class='header__social-badge' %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% include snippets/mobile-menu.liquid %}

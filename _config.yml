@@ -1,0 +1,72 @@
+title: CORSAVE
+email: info@corsave.pe
+description: >-
+  Empresa constructora con los más altos estándares de calidad y productividad.
+baseurl: ""
+url: ""
+repository: "corsave/site"
+
+# URLS
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      permalink: /:categories/:title/
+
+# Settings
+settings:
+  logo: "/assets/logo.svg"
+  favicon: "/assets/favicon.ico"
+
+# Menus
+linklists:
+  main:
+    links:
+      - title: "Inicio"
+        url: "/"
+      - title: "Empresa"
+        url: "/empresa/"
+      - title: "Servicios"
+        url: "/servicios/"
+      - title: "Proyectos"
+        url: "/proyectos/"
+      - title: "Contacto"
+        url: "/contacto/"
+  footer:
+    links:
+      - title: "Inicio"
+        url: "/"
+      - title: "Empresa"
+        url: "/empresa/"
+      - title: "Contacto"
+        url: "/contacto/"
+  social:
+    links:
+      - title: "facebook"
+        url: "https://facebook.com/corsave"
+      - title: "instagram"
+        url: "https://www.instagram.com/corsave.peru"
+      - title: "whatsapp"
+        url: "https://wa.me/51959226421"
+
+# Build settings
+plugins:
+- jekyll-feed
+- jekyll-seo-tag
+- jekyll-sitemap
+- jekyll-archives
+
+# Exclude from processing.
+include: ["_templates", "_pages"]
+exclude:
+- CNAME
+- Gemfile
+- Gemfile.lock
+- node_modules/
+- vendor/
+- package.json
+- package-lock.json
+- webpack.config.js
+- styles
+- scripts

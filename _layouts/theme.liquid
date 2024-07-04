@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="{{ request.locale.iso_code }}">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+    <meta content="width=device-width,initial-scale=1" name="viewport" />
+    <link rel="canonical" href="{{ canonical_url }}" />
+
+    <title>{{ page.title | default: site.title }}</title>
+
+    {% include snippets/head-meta-socials.liquid %}
+
+    {% include snippets/head-favicons.liquid %}
+
+    <link rel="stylesheet" href="{{ "/assets/vendor.css" | prepend: site.baseurl }}">
+    <link rel="stylesheet" href="{{ "/assets/css-variables.css" | prepend: site.baseurl }}">
+    <link rel="stylesheet" href="{{ "/assets/style.css" | prepend: site.baseurl }}">
+  </head>
+
+  {% assign page_url = page.handle | strip  | remove: ' page.handle' %}
+  {% assign request_page = request.path %}
+
+  {% if request.page_type == 'index' and page_url == 'MISSING' %}
+    {% assign request_page = '/' %}
+  {% endif %}
+
+  <body class="body">
+    {% include snippets/ie-support.liquid %}
+
+    <div class="page">
+      <header class="page__header">
+        {% include sections/header.liquid
+          menu='main'
+          show_button=false
+          button_text=''
+          button_url='/'
+          timer_type='simple'
+          show_announcement_bar=false
+          label='Drop 001'
+          enable_countdown=true
+          countdown_start_date='August 21, 2021 07:00:00'
+          countdown_end_date='August 24, 2024 20:00:00'
+        %}
+      </header>
+
+      <div class="page__main">
+        {{ content }}
+      </div>
+
+      <footer class="page__footer">
+        {% include sections/footer.liquid
+          menu='footer'
+          copyright_text="CORSAVE"
+          show_powered_by=True
+        %}
+      </footer>
+    </div>
+
+    {% include snippets/theme-js-data.liquid %}
+
+    <script src="{{ "/assets/theme.js" | prepend: site.baseurl }}"></script>
+  </body>
+</html>

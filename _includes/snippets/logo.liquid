@@ -1,0 +1,7 @@
+{% if site.settings.logo != blank %}
+  {% include snippets/logo.svg class=include.class %}
+{% else %}
+  <span class="text-logo">
+    {{ site.title }}
+  </span>
+{% endif %}

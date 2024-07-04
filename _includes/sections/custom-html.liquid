@@ -1,0 +1,11 @@
+<section class="custom-html custom-html--{{ section.id }}">
+  {% unless include.fullwidth %}
+    <div class="container wrapper">
+  {% endunless %}
+
+  {{ include.custom_html }}
+
+  {% unless include.fullwidth %}
+    </div>
+  {% endunless %}
+</section>

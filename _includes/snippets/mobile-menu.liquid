@@ -1,0 +1,84 @@
+<aside 
+  data-drawer="mobile-menu" 
+  class="drawer hidden@sm"
+>
+  <div class="drawer__background" data-drawer-trigger-primary="mobile-menu"></div>
+  <div class="drawer__content drawer__content--small mobile-menu">
+    <div class="mobile-menu__section mobile-menu__section--header">
+      <a href="#" class="mobile-menu__close" data-drawer-trigger-primary="mobile-menu">
+        {% include snippets/icon-close.svg %}
+      </a>
+    </div>
+    <div class="mobile-menu__section mobile-menu__section--body">
+      <div class="mobile-menu__nav">
+        <ul class="mobile-menu__list">
+          <li class="mobile-menu__list-item">
+            <a
+              href="/"
+              class="mobile-menu__link"
+            >
+              Inicio
+            </a>
+          </li>
+
+          {% for link in site.linklists[include.menu].links %}
+            <li class="mobile-menu__list-item">
+              {% if link.links %}
+                <label for="input-drawer-{{ forloop.index0 }}" class="mobile-menu__link">
+                  {{ link.title }}
+
+                  <div class="mobile-menu__link-icon">
+                    {% include snippets/icon-chevron-right.svg %}
+                  </div>
+                </label>
+              {% else %}
+                <a
+                  href="{{ link.url | localized_url }}"
+                  class="mobile-menu__link"
+                >
+                  {{ link.title }}
+                </a>
+              {% endif %}
+
+              {% if link.links %}
+                <input type="checkbox" id="input-drawer-{{ forloop.index0 }}" class="drawer__checkbox hidden" data-drawer-trigger-secondary>
+                <div class="drawer__content drawer__content--small">
+                  <div class="mobile-menu__section mobile-menu__section--header">
+                    <label href="#" class="mobile-menu__close" for="input-drawer-{{ forloop.index0 }}">
+                      {% include snippets/icon-chevron-left.svg %}
+                    </label>
+                    <div class="mobile-menu__label">
+                      {{ link.title }}
+                    </div>
+                    <div class="mobile-menu__right"></div>
+                  </div>
+                  <div class="mobile-menu__section mobile-menu__section--body">
+                    <div class="mobile-menu__nav">
+                      <ul class="mobile-menu__list">
+                        {% for childlink in link.links %}
+                          <li class="mobile-menu__list-item">
+                            <a class="mobile-menu__link" href="{{ childlink.url | localized_url }}">
+                              {{ childlink.title }}
+                            </a>
+                          </li>
+                        {% endfor %}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              {% endif %}
+            </li>
+          {% endfor %}
+
+        </ul>
+      </div>
+    </div>
+    <div class="mobile-menu__section mobile-menu__section--socials">
+      <div class="mobile-menu__list-social">
+        <ul class="mobile-menu__socials">
+          {% include snippets/socials.liquid menu='social' li_class='mobile-menu__social' a_class='mobile-menu__social-link' badge_class='mobile-menu__social-badge' %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</aside>

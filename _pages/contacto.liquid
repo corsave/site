@@ -1,0 +1,61 @@
+---
+layout: theme
+permalink: /contacto/index.html
+title: Nuestros proyectos | CORSAVE
+---
+<div class="main">
+  <div data-testid="main.sections" class="main__sections main__sections--space">
+    {% include sections/rich-text.liquid
+        first_column=12
+        first_column_mobile=12
+        second_column=12
+        second_column_mobile=12
+        heading="Contacto"
+        text=""
+        direction="center"
+    %}
+
+
+    {% include sections/custom-html.liquid
+      custom_html='<div class="container container--11 wrapper">
+    <div class="grid grid--middle" style="border-bottom: 1px solid var(--color-on-background); padding: 25px 0;">
+      <div class="grid__column grid__column--6">
+          <strong>Dirección</strong>
+      </div>
+      <div class="grid__column grid__column--6">
+        <p>Urb. La Estrella Mz.C Lt13 Jose Luis Bustamante y Rivero, Arequipa, Peru</p>
+      </div>
+    </div>
+    <div class="grid grid--middle" style="border-bottom: 1px solid var(--color-on-background); padding: 25px 0;">
+      <div class="grid__column grid__column--6">
+        <strong>Celular/WhatsApp</strong>
+      </div>
+      <div class="grid__column grid__column--6">
+        <p>959 226 421</p>
+      </div>
+    </div>
+    <div class="grid grid--middle" style="border-bottom: 1px solid var(--color-on-background); padding: 25px 0;">
+      <div class="grid__column grid__column--6">
+        <strong>Email</strong>
+      </div>
+      <div class="grid__column grid__column--6">
+        <p>info@corsave.pe</p>
+      </div>
+    </div></div>'
+      fullwidth=false
+    %}
+
+    {% include sections/custom-html.liquid
+      custom_html='<div class="container container--11 wrapper">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d271.7195382242165!2d-71.50936911588003!3d-16.422936654161997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91424b86faaf4a81%3A0xb42f9b4e2f46cbda!2sCORSAVE!5e0!3m2!1ses-419!2spe!4v1720050699477!5m2!1ses-419!2spe" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>'
+      fullwidth=false
+    %}
+
+    {% include sections/separator.liquid
+      size="outer"
+      image="/assets/footer_label_pc.svg"
+      title=""
+    %}
+  </div>
+</div>

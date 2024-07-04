@@ -1,0 +1,34 @@
+<section recent-posts-ref class="recent-posts recent-posts--{{ section.id }}">
+  <div class="container wrapper">
+    <div class="recent-posts__inner">
+      <div class="recent-posts__header">
+        <div class="section-header">
+          <h2 class="section-header__heading{% if include.heading_alignment == 'left' %} section-header__heading--left{% endif %}">{{ include.heading }}</h2>
+
+          {% if include.show_button %}
+            <div class="section-header__cta">
+              <a href="/supporters" class="button button--outline button--small">
+                {{ include.button_text }}
+              </a>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+
+      <div class="recent-posts__grid">
+        <div class="grid grid--waffle">
+          {% assign count_posts = 0 %}
+
+          {% for post in site.posts offset: 1 %}
+            {% include snippets/post-types.liquid post=post %}
+            {% assign count_posts = count_posts | plus: 1 %}
+          {% endfor %}
+
+          {% if count_posts == 0 %}
+            <p class="post-tile__empty hidden" data-posts="none">No posts were found. Try adding posts or changing the section filters.</p>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

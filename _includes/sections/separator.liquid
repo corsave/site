@@ -1,0 +1,31 @@
+<section class="separator">
+  <div class="separator__inner">
+    <div class="separator__image-container">
+      <img
+        class="separator__image"
+        src="{{ include.image }}"
+        alt="{{ include.title }}"
+      />
+    </div>
+  </div>
+</section>
+
+<style>
+  .separator {
+    overflow: hidden;
+  }
+
+  @media (max-width: 768px) {
+    .separator__image-container {
+      width: 50rem;
+    }
+  }
+
+  .separator__image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    vertical-align: middle;
+    width: 100%;
+  }
+</style>

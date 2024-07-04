@@ -1,0 +1,37 @@
+<section class="image-with-text">
+  <div class="container wrapper">
+    <div class="image-with-text__inner">
+      <div class="grid grid--middle">
+        <div class="grid__column grid__column--12 grid__column--6@md">
+          {% if include.image != blank %}
+            <div class="image-with-text__image-container">
+              <img 
+                class="image-with-text__image"
+                src="{{ include.image | img_url: '1024x' }}"
+              />
+            </div>
+          {% endif %}
+        </div>
+
+        <div class="grid__column grid__column--12 grid__column--6@md{% if include.image_position == 'right' %} grid__column--first@md{% endif %}">
+          <div class="image-with-text__content{% if include.image_position == 'right' %} image-with-text__content--left{% endif %}">
+            <h2 class="image-with-text__heading">{{ include.heading }}</h2>
+
+            <div class="image-with-text__text">
+              <div class="html-formatter">
+                {{ include.text }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .image-with-text .image-with-text__inner {
+    border-top: 1px solid var(--color-on-background);
+    padding: 40px 0;
+  }
+</style>

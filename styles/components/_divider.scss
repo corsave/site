@@ -1,0 +1,12 @@
+.divider {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  &__line {
+    flex: 1 1 auto;
+    border-radius: 2px;
+    height: 2px;
+    background-color: get-color(divider);
+  }
+}
