@@ -12,15 +12,6 @@
     <div class="mobile-menu__section mobile-menu__section--body">
       <div class="mobile-menu__nav">
         <ul class="mobile-menu__list">
-          <li class="mobile-menu__list-item">
-            <a
-              href="/"
-              class="mobile-menu__link"
-            >
-              Inicio
-            </a>
-          </li>
-
           {% for link in site.linklists[include.menu].links %}
             <li class="mobile-menu__list-item">
               {% if link.links %}
