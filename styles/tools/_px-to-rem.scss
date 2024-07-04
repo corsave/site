@@ -1,6 +1,0 @@
-// Convert px to rem, based on root size
-@use "sass:math";
-
-@function px-to-rem($size-pixel) {
-  @return math.div($size-pixel, 16px) * 1rem;
-}

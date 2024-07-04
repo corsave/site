@@ -1,9 +1,0 @@
-.wrapper {
-  padding-right: $gutter;
-  padding-left: $gutter;
-
-  @include media-query(sm) {
-    padding-right: $gutter-sm;
-    padding-left: $gutter-sm;
-  }
-}
