@@ -26,7 +26,7 @@ jobs:
         git commit -m "Update"
 
     - name: Push changes
-      uses: corsave/site@main
+      uses: actions/checkout@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         branch: main
